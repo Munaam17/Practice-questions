@@ -1039,9 +1039,114 @@ list1.sort()
 
 import math
 
-a = math.gcd(22,23)
+# a = math.gcd(22,23)
 
-if a > 1:
-    print("Numbers are not Co-prime as the GCD is", a)
+# if a > 1:
+#     print("Numbers are not Co-prime as the GCD is", a)
+# else:
+#     print("Numbers are Co-Prime, the GCD is", a)
+
+
+# Co prime number for a given number
+
+# def impute_gcd(a, b):
+#     if b == 0:
+#         return a
+#     else:
+#         # print(b)
+#         return impute_gcd(b, a%b)
+    
+    
+# c = impute_gcd(12,5)
+# # print(c)
+
+# but this way we won't have divisors of any number
+
+# so for divisors
+
+# a = 12
+# for i in range(1, a+1):
+#     gcd = 1
+#     for j in range(1, i+1):
+#         if i % j == 0 and a % j == 0:
+#             gcd = j
+#     if gcd == 1:
+#         print(i)
+                 
+# num1 = int(input("Enter number: "))
+# lower_limit = int(input("lower limit: "))
+# upper_limit = int(input("upper limit: "))
+
+# for i in range(lower_limit,upper_limit):
+#     if math.gcd(num1, i) == 1:
+#         print(i)
+
+
+# Q: find the maximum value in the nested list?
+
+# list2 = []
+# def list_max(list1):
+#     for i in list1:
+#         if type(i) == list:
+#             list_max(i)
+#         else:
+#             list2.append(i)
+#     return max(list2), min(list2)
+
+# list1 = [1,2,[[23,43]],23]
+# c = list_max(list1)
+# print(c)
+
+#1
+#2 5 
+#3 6 8
+#4 7 9 10
+
+# n = int(input("Enter no of rows: "))
+
+# for row in range(n):
+#     val = row +1 #0+1
+#     dec = n - 1  #4-1=3
+#     for col in range(row+1):
+#         print(val, end=" ")
+#         val = val + dec  #0+3=3
+#         dec = dec - 1    #3-1 =2
+#     print()
+
+# Q: printing in reversed pattern staring from highest val and ending with 1
+
+# def num(n1):
+#     if n1 == 1:
+#         return 1
+#     else:
+#         return n1 + num(n1-1)
+    
+# a = num(n)   #for getting the first digit
+# for row in range(n):  #no of rows
+#     val = a - row    #
+#     dec = n - 1
+#     for col in range(row+1):  #no of columns
+#         print(format(val, '<3'), end=" ")  
+#         val = val - dec
+#         dec = dec - 1
+#     print()
+
+# Q: guess the output
+
+# for i in sorted([10,20,30,2,0,1,90,1], reverse = True):
+#     print(i)
+
+# for i in sorted([10,20,30,2,0,1,90,1])[::-1]:
+#     print(i)
+
+# for i in [10,2,3,0,90].sort():
+#     print(i)
+
+
+# Q: leap year?
+
+year = int(input("Enter year number you want to know is a leap year or not: "))
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print(year, "Leap year")
 else:
-    print("Numbers are Co-Prime, the GCD is", a)
+    print(year, "Not a leap year")
