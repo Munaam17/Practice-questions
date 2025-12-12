@@ -932,34 +932,34 @@ list1 = [1,2,3,2,4,4,2]
 
 # # using list comprenhension method
 
-list2 = [i for i in range(len(list1)) if list1[i]== 0]
-print(*list2)
+# list2 = [i for i in range(len(list1)) if list1[i]== 0]
+# print(*list2)
 
 
-# Q: BinarySearch
+# # Q: BinarySearch
 
-def BinarySearch (list1, key):
-    low = 0
-    high = len(list1)-1
-    Found = False
-    result = []
-    while low <= high and not Found:
-        mid = (low + high) // 2
-        # print(mid)
-        if key == list1[mid]:
-            Found = True
-            result.append(mid)
-        elif key > list1[mid]:
-            low = mid + 1
-        else:
-            high = mid - 1
-    if Found == True:
-        print("key found at", *result )
-    else:
-        print("key not found")
+# def BinarySearch (list1, key):
+#     low = 0
+#     high = len(list1)-1
+#     Found = False
+#     result = []
+#     while low <= high and not Found:
+#         mid = (low + high) // 2
+#         # print(mid)
+#         if key == list1[mid]:
+#             Found = True
+#             result.append(mid)
+#         elif key > list1[mid]:
+#             low = mid + 1
+#         else:
+#             high = mid - 1
+#     if Found == True:
+#         print("key found at", *result )
+#     else:
+#         print("key not found")
 
-list1 = [23, 0, 1, 4, 3, 7, 3]
-list1.sort()
+# list1 = [23, 0, 1, 4, 3, 7, 3]
+# list1.sort()
 # print(list1)
 # BinarySearch(list1, 3)
 
@@ -1037,7 +1037,7 @@ list1.sort()
 
 # Q: using in built library
 
-import math
+# import math
 
 # a = math.gcd(22,23)
 
@@ -1145,8 +1145,8 @@ import math
 
 # Q: leap year?
 
-year = int(input("Enter year number you want to know is a leap year or not: "))
-if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
-    print(year, "Leap year")
-else:
-    print(year, "Not a leap year")
+# year = int(input("Enter year number you want to know is a leap year or not: "))
+# if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+#     print(year, "Leap year")
+# else:
+#     print(year, "Not a leap year")
