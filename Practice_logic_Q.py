@@ -1,5 +1,3 @@
-# test commit for GitHub contribution
-
 # # Armstrong number
 
 # # Number=22
@@ -1115,7 +1113,7 @@ list1 = [1,2,3,2,4,4,2]
 #         dec = dec - 1    #3-1 =2
 #     print()
 
-# Q: printing in reversed pattern staring from highest val and ending with 1
+# Q: printing in reversed pattern staring from highest val and ending with 1.
 
 # def num(n1):
 #     if n1 == 1:
@@ -1152,3 +1150,14 @@ list1 = [1,2,3,2,4,4,2]
 #     print(year, "Leap year")
 # else:
 #     print(year, "Not a leap year")
+# Print()
+
+# For Date to check id it's Palindrome or not
+
+date = input("Enter the date in DD/MM/YYYY format: ")
+given_date = date.replace("/", "")
+reverse_date = given_date [::-1]
+if given_date == reverse_date:
+    print(date, "is Palindrome")
+else:
+    print(date, "is not Palindrome")
