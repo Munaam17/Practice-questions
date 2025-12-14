@@ -1154,10 +1154,103 @@ list1 = [1,2,3,2,4,4,2]
 
 # For Date to check id it's Palindrome or not
 
-date = input("Enter the date in DD/MM/YYYY format: ")
-given_date = date.replace("/", "")
-reverse_date = given_date [::-1]
-if given_date == reverse_date:
-    print(date, "is Palindrome")
-else:
-    print(date, "is not Palindrome")
+# date = input("Enter the date in DD/MM/YYYY format: ")
+# given_date = date.replace("/", "")
+# reverse_date = given_date [::-1]
+# if given_date == reverse_date:
+#     print(date, "is Palindrome")
+# else:
+#     print(date, "is not Palindrome")
+
+
+
+# Q: Armstrong number
+
+# n = int(input("Enter Number you need to know is Armstrong or not: "))
+
+# # store the digit val with it's cube
+# store = 0 
+# # store the orginal n
+# orginal = n
+# # for number of digits
+# dig = len(str(n))
+
+# for i in range(dig):
+#     # print(n)
+#     a = n % 10  #153%10 = 3, 15%10 = 5, 1%10 = 1
+#     store = store + (a**dig)
+#     # print(store)
+#     b = n // 10  #153//10 = 15, 15 // 10 = 1, 1 // 10 = 0
+#     n = b        #15, 1
+
+# if orginal == store:
+#     print(orginal, "is an Armstrong number")
+# else:
+#     print(orginal, "not an Armstrong number")
+
+    
+    
+
+# Q: printing star patterns
+
+n = int(input("Enter number of rows: "))
+
+for row in range(1, n+1):
+    for col in range(1, row+1):
+        print(format("*", "<1"), end = " ")
+    print()
+
+# 2nd pattern
+
+for row in range(n):
+    spc = n - 1 - row #3-1-0=2
+    str = row + 1
+    for sp in range(spc):
+        print(end = " ")
+    for st in range(str):
+        print("*", end= "")
+    print()
+
+# 3rd pattern reverse
+
+for row in range(n):
+    for col in range(n, row, -1):
+        print(format("*", "<1"), end = " ")
+    print()
+
+# 4th pattern reverse
+
+for row in range(n, 0, -1):
+    spc = n - row #3-3=0, 3-2=1, 3-1=2
+    for sp in range(spc):
+        print(end = " ")
+    for st in range(row):
+        print("*", end= "")
+    print()
+
+
+# 5th pattern program for string printing
+
+sta = input("Enter string: ")
+for row in range(len(sta)):
+    for col in range(row+1):
+        print(format(sta[col], "<1"), end = " ")
+    print()
+
+
+# Q: Factorial recurssion
+
+def factorial(n):
+    if n == 1 or n == 0:
+        return 1
+    return  n * factorial(n-1)
+
+print(factorial(5))
+
+# using loops
+n = 5
+result = 1
+while n >= 1:
+    result = result * n
+    n = n - 1
+print(result)
