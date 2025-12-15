@@ -918,7 +918,7 @@
 
 # Q: for printing indexes of duplicate val in a list
 
-list1 = [1,2,3,2,4,4,2]
+# list1 = [1,2,3,2,4,4,2]
 # result = []
 # for i in range(len(list1)):
 #     for j in range(i+1,len(list1)):
@@ -1191,66 +1191,102 @@ list1 = [1,2,3,2,4,4,2]
     
     
 
-# Q: printing star patterns
+# # Q: printing star patterns
 
-n = int(input("Enter number of rows: "))
+# n = int(input("Enter number of rows: "))
 
-for row in range(1, n+1):
-    for col in range(1, row+1):
-        print(format("*", "<1"), end = " ")
-    print()
+# for row in range(1, n+1):
+#     for col in range(1, row+1):
+#         print(format("*", "<1"), end = " ")
+#     print()
 
-# 2nd pattern
+# # 2nd pattern
 
-for row in range(n):
-    spc = n - 1 - row #3-1-0=2
-    str = row + 1
-    for sp in range(spc):
-        print(end = " ")
-    for st in range(str):
-        print("*", end= "")
-    print()
+# for row in range(n):
+#     spc = n - 1 - row #3-1-0=2
+#     str = row + 1
+#     for sp in range(spc):
+#         print(end = " ")
+#     for st in range(str):
+#         print("*", end= "")
+#     print()
 
-# 3rd pattern reverse
+# # 3rd pattern reverse
 
-for row in range(n):
-    for col in range(n, row, -1):
-        print(format("*", "<1"), end = " ")
-    print()
+# for row in range(n):
+#     for col in range(n, row, -1):
+#         print(format("*", "<1"), end = " ")
+#     print()
 
-# 4th pattern reverse
+# # 4th pattern reverse
 
-for row in range(n, 0, -1):
-    spc = n - row #3-3=0, 3-2=1, 3-1=2
-    for sp in range(spc):
-        print(end = " ")
-    for st in range(row):
-        print("*", end= "")
-    print()
-
-
-# 5th pattern program for string printing
-
-sta = input("Enter string: ")
-for row in range(len(sta)):
-    for col in range(row+1):
-        print(format(sta[col], "<1"), end = " ")
-    print()
+# for row in range(n, 0, -1):
+#     spc = n - row #3-3=0, 3-2=1, 3-1=2
+#     for sp in range(spc):
+#         print(end = " ")
+#     for st in range(row):
+#         print("*", end= "")
+#     print()
 
 
-# Q: Factorial recurssion
+# # 5th pattern program for string printing
 
-def factorial(n):
-    if n == 1 or n == 0:
-        return 1
-    return  n * factorial(n-1)
+# sta = input("Enter string: ")
+# for row in range(len(sta)):
+#     for col in range(row+1):
+#         print(format(sta[col], "<1"), end = " ")
+#     print()
 
-print(factorial(5))
 
-# using loops
-n = 5
-result = 1
-while n >= 1:
-    result = result * n
-    n = n - 1
-print(result)
+# # Q: Factorial recurssion
+
+# def factorial(n):
+#     if n == 1 or n == 0:
+#         return 1
+#     return  n * factorial(n-1)
+
+# print(factorial(5))
+
+# # using loops
+# n = 5
+# result = 1
+# while n >= 1:
+#     result = result * n
+#     n = n - 1
+# print(result)
+
+
+#Q: Fabonacci series?
+# 0, 1, 1, 2, 3, 5, 8, 13....
+
+# a = 0
+# b = 1
+# a + b = 0 + 1 = 1
+# a = b 1
+# b = a + b 1 + 1 = 2
+# a = b 2
+# b = a + b 1 + 2 = 3
+
+num = int(input("Enter the number to where you want the series: "))
+
+a, b = 0, 1
+
+for i in range(num):
+    print(a, end = " ")
+    temp = a + b # 0 + 1 = 1, 1 + 1
+    a = b # 1
+    b = temp #1
+
+print()
+
+# Q: prime numbers
+
+if num >= 1:
+    for i in range(2, num):
+        if num % i == 0: #5%1=
+            print(num, "is not a prime number")
+            break
+    else:
+        print(num, "is a prime number")
+else:
+    print("Pick no >= 1")
