@@ -1267,26 +1267,63 @@
 # a = b 2
 # b = a + b 1 + 2 = 3
 
-num = int(input("Enter the number to where you want the series: "))
+# num = int(input("Enter the number to where you want the series: "))
 
-a, b = 0, 1
+# a, b = 0, 1
 
-for i in range(num):
-    print(a, end = " ")
-    temp = a + b # 0 + 1 = 1, 1 + 1
-    a = b # 1
-    b = temp #1
+# for i in range(num):
+#     print(a, end = " ")
+#     temp = a + b # 0 + 1 = 1, 1 + 1
+#     a = b # 1
+#     b = temp #1
 
-print()
+# print()
 
-# Q: prime numbers
+# # Q: prime numbers
 
-if num >= 1:
-    for i in range(2, num):
-        if num % i == 0: #5%1=
-            print(num, "is not a prime number")
-            break
-    else:
-        print(num, "is a prime number")
-else:
-    print("Pick no >= 1")
+# if num >= 1:
+#     for i in range(2, num):
+#         if num % i == 0: #5%1=
+#             print(num, "is not a prime number")
+#             break
+#     else:
+#         print(num, "is a prime number")
+# else:
+#     print("Pick no >= 1")
+
+
+# Q: Interview question flames game
+
+# name1 = input("Enter the 1st name: ").lower()
+# name2 = input("Enter the 2nd name: ").lower()
+# name1 = name1.replace(" ", "")
+# name2 = name2.replace(" ", "")
+# print(name1)
+# print(name2)
+
+# for i in name1:
+#     for j in name2:
+#         if i == j:
+#             name1 = name1.replace(i, "",1)
+#             name2 = name2.replace(i,"",1)
+#             break
+
+# print(name1, name2)
+# count = len(name1+name2)
+# print(count)
+
+# if count > 0:
+#     a = ["Friends", "lovers", "Affecionate", "Marriage", "Enemy", "Siblings"]
+#     while len(a) > 1:
+#         c = count % len(a)
+#         c_index = c - 1
+#         if c_index >= 0:
+#             left = a [:c_index]
+#             right = a [c_index+1:]
+#             a = right + left
+#         else:
+#             a = a [:c_index]
+#     print("relationship is", a[0])
+# else:
+#     print("please try different names")
+
