@@ -1304,8 +1304,8 @@
 # for i in name1:
 #     for j in name2:
 #         if i == j:
-#             name1 = name1.replace(i, "",1)
-#             name2 = name2.replace(i,"",1)
+#             name1 = name1.replace(i, "",1) #m
+#             name2 = name2.replace(j,"",1) #mx, m
 #             break
 
 # print(name1, name2)
@@ -1327,3 +1327,5 @@
 # else:
 #     print("please try different names")
 
+a = ["Friends", "lovers", "Affecionate", "Marriage", "Enemy", "Siblings"]
+print(a [5:])
