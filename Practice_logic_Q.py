@@ -1327,5 +1327,71 @@
 # else:
 #     print("please try different names")
 
-a = ["Friends", "lovers", "Affecionate", "Marriage", "Enemy", "Siblings"]
-print(a [5:])
+# a = ["Friends", "lovers", "Affecionate", "Marriage", "Enemy", "Siblings"]
+# print(a [5:])
+
+# #Fibonacci using recurssion
+
+# def fib(n):
+#     if n == 0:
+#         return 0
+#     if n == 1:
+#         return 1
+#     return fib(n-1) + fib(n-2)
+
+# print(fib(9))
+
+
+# Q: Addition and subtraction of matrix
+
+# taking inputs for rows and columns
+row = int(input("Enter no of rows: "))
+col = int(input("Enter no of cols: "))
+print()
+
+# taking inputs elements of 1st matrix using list comprehension method
+print("Enter the elements for Matrix 1: ")
+matrix1 = [[int(input()) for i in range(col)] for j in range(row)]
+print()
+
+# taking inputs elements of 2nd matrix using list comprehension method
+print("Enter the elements for Matrix 2: ")
+matrix2 = [[int(input()) for i in range(col)] for j in range(row)]
+print()
+
+# for printing the matrix 1 in matrix format
+print("Matrix 1: \n")
+for i in range (row):
+    for j in range (col):
+        print(format(matrix1[i][j], "<3"), end = " ")
+    print()
+print()
+
+# for printing the matrix 2 in matrix format
+print("Matrix 2: \n")
+for i in range (row):
+    for j in range (col):
+        print(format(matrix2[i][j], "<3"), end = " ")
+    print()
+print()
+
+# for storing the addition
+result = [[0 for i in range(col)] for j in range(row)]
+
+# doing addtion
+for i in range(row):
+    for j in range(col):
+        result [i][j] = matrix1 [i][j] + matrix2 [i][j]
+
+# now for printing the result in matrix format
+print("Result: \n")
+for i in range(row):
+    for j in range(col):
+        print(format(result[i][j], "<3"), end = " ")
+    print()
+        
+
+
+
+
+
