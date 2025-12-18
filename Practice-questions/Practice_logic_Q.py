@@ -1422,53 +1422,53 @@
 ## For result format : (pxq)
 
 
-# taking inputs for rows and columns
-p = int(input("Enter no of rows in Matrix 1: "))
-q = int(input("Enter no of cols in Matrix 2: "))
-n = int(input("Enter no of cols in Matrix 1 / no of row in Matrix 2: "))
-print()
+# # taking inputs for rows and columns
+# p = int(input("Enter no of rows in Matrix 1: "))
+# q = int(input("Enter no of cols in Matrix 2: "))
+# n = int(input("Enter no of cols in Matrix 1 / no of row in Matrix 2: "))
+# print()
 
-# taking inputs elements of 1st matrix using list comprehension method
-print("Enter the elements for Matrix 1: ")
-matrix1 = [[int(input()) for i in range(n)] for j in range(p)]
-print()
+# # taking inputs elements of 1st matrix using list comprehension method
+# print("Enter the elements for Matrix 1: ")
+# matrix1 = [[int(input()) for i in range(n)] for j in range(p)]
+# print()
 
-# for printing the matrix 1 in matrix format
-print("Matrix 1: \n")
-for i in range (p):
-    for j in range (n):
-        print(format(matrix1[i][j], "<3"), end = " ")
-    print()
-print()
-
-
-# taking inputs elements of 2nd matrix using list comprehension method
-print("Enter the elements for Matrix 2: ")
-matrix2 = [[int(input()) for i in range(q)] for j in range(n)]
-print()
-
-# for printing the matrix 2 in matrix format
-print("Matrix 2: \n")
-for i in range (n):
-    for j in range (q):
-        print(format(matrix2[i][j], "<3"), end = " ")
-    print()
-print()
+# # for printing the matrix 1 in matrix format
+# print("Matrix 1: \n")
+# for i in range (p):
+#     for j in range (n):
+#         print(format(matrix1[i][j], "<3"), end = " ")
+#     print()
+# print()
 
 
-# for storing the multiplication
-result_m = [[0 for i in range(q)] for j in range(p)]
+# # taking inputs elements of 2nd matrix using list comprehension method
+# print("Enter the elements for Matrix 2: ")
+# matrix2 = [[int(input()) for i in range(q)] for j in range(n)]
+# print()
 
-# doing multiplication
-for i in range(p):
-    for j in range(q):
-        for k in range(n):
-            result_m [i][j] = result_m [i][j] + matrix1 [i][k] * matrix2 [k][j]
+# # for printing the matrix 2 in matrix format
+# print("Matrix 2: \n")
+# for i in range (n):
+#     for j in range (q):
+#         print(format(matrix2[i][j], "<3"), end = " ")
+#     print()
+# print()
 
 
-# now for printing the result in matrix format
-print("Result: \n")
-for i in range(p):
-    for j in range(q):
-        print(format(result_m [i][j], "<3"), end = " ")
-    print()
+# # for storing the multiplication
+# result_m = [[0 for i in range(q)] for j in range(p)]
+
+# # doing multiplication
+# for i in range(p):
+#     for j in range(q):
+#         for k in range(n):
+#             result_m [i][j] = result_m [i][j] + matrix1 [i][k] * matrix2 [k][j]
+
+
+# # now for printing the result in matrix format
+# print("Result: \n")
+# for i in range(p):
+#     for j in range(q):
+#         print(format(result_m [i][j], "<3"), end = " ")
+#     print()
