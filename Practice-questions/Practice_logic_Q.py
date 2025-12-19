@@ -1475,9 +1475,9 @@
 
 # palindrome leetcode
 
-x = 12112
-# a = str(x)
-print(str(x) == str(x)[::-1])
+# x = 12112
+# # a = str(x)
+# print(str(x) == str(x)[::-1])
 # print()
 # c = ""
 # for i in range(len(a)-1,-1,-1): #3-1=2, 1, 0
