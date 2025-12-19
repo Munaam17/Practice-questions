@@ -1492,3 +1492,51 @@
 #     print(t_f)
 # else:
 #     print(t_f)
+
+
+# Creating Class
+
+# class Ott():
+#     def __init__(self,a):
+#         self.a = a*a
+#         # print(self.r, a)
+#     def display(self):
+#         self.b = self.a % 2
+#         print(self.b)
+
+# class chil(Ott):
+#     def __init__(self,a,d):
+#         super().__init__(a)
+#         self.d_ = d
+#     def f_w(self, a, d):
+#         self.d_ = self.d_ + a
+#         print(self.d_)
+
+# # ewin = Ott(2)
+# # ewin.a
+# # ewin.display()
+# net = chil(2,3)
+# net.f_w(2,3)
+
+x = "IV"
+y = ""
+ans = 0
+roman = { "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000 }
+for i in range(len(x)):
+    for j, val in roman.items():
+        if x[i] == j:
+            y = y + x[i]
+        if x[i] and x[i-1] == "IV" or "IX":
+            ans = ans + val #6
+            ans = ans - (2*1)
+            print(ans)
+        else:
+            ans = ans + val   
+            print(ans)
+if x == y:
+    print("good to go")
+else:
+    print("not correct input")
+
+
+
