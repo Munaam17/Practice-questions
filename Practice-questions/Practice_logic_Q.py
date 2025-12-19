@@ -1472,3 +1472,23 @@
 #     for j in range(q):
 #         print(format(result_m [i][j], "<3"), end = " ")
 #     print()
+
+# palindrome leetcode
+
+x = 12112
+# a = str(x)
+print(str(x) == str(x)[::-1])
+# print()
+# c = ""
+# for i in range(len(a)-1,-1,-1): #3-1=2, 1, 0
+#     c += a[i]
+
+# # print(c)
+# # palindrome = a[::-1]
+# # print(b)
+# t_f = False
+# if c == a:
+#     t_f = True
+#     print(t_f)
+# else:
+#     print(t_f)
