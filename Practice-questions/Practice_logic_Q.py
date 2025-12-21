@@ -1518,25 +1518,54 @@
 # net = chil(2,3)
 # net.f_w(2,3)
 
-x = "IV"
-y = ""
-ans = 0
-roman = { "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000 }
-for i in range(len(x)):
-    for j, val in roman.items():
-        if x[i] == j:
-            y = y + x[i]
-        if x[i] and x[i-1] == "IV" or "IX":
-            ans = ans + val #6
-            ans = ans - (2*1)
-            print(ans)
-        else:
-            ans = ans + val   
-            print(ans)
-if x == y:
-    print("good to go")
-else:
-    print("not correct input")
+# x = "IV"
+# y = ""
+# ans = 0
+# roman = { "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000 }
+# for i in range(len(x)):
+#     for j, val in roman.items():
+#         if x[i] == j:
+#             y = y + x[i]
+#         if x[i] and x[i-1] == "IV" or "IX":
+#             ans = ans + val #6
+#             ans = ans - (2*1)
+#             print(ans)
+#         else:
+#             ans = ans + val   
+#             print(ans)
+# if x == y:
+#     print("good to go")
+# else:
+#     print("not correct input")
 
 
 
+# Q: Number Diamond Pattern
+
+num = 9
+# For space we can do this as well but this will not work for any number of row so have to neglect this approach
+# space = (num*2)+1-(row*3) when num = 4
+
+for row in range(num):
+    for col in range(num-1-row):
+        print(" ", end = "  ")
+    for col in range(row+1,0,-1):
+        print(col, end = " ")
+    if row > 0:
+        for col in range(row-1):
+            print(" ", end = " ")
+        for col in range(row+1):
+            print(col+1, end = " ")               
+    print()
+
+for row in range(num-1):
+    for col in range(row+1):
+        print(" ", end = "  ")
+    for col in range(num-1-row,0,-1):
+        print(col, end = " ")
+    if row < (num-2):
+        for col in range(num-row-3):
+            print(" ", end = " ")
+        for col in range(num-row-1):
+            print(col+1, end = " ")               
+    print()
