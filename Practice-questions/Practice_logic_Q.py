@@ -1494,7 +1494,8 @@
 #     print(t_f)
 
 
-# Creating Class
+# Creating Class, 
+# practice of OOP
 
 # class Ott():
 #     def __init__(self,a):
@@ -1540,32 +1541,32 @@
 
 
 
-# Q: Number Diamond Pattern
+# # Q: Number Diamond Pattern
 
-num = 9
-# For space we can do this as well but this will not work for any number of row so have to neglect this approach
-# space = (num*2)+1-(row*3) when num = 4
+# num = 9
+# # For space we can do this as well but this will not work for any number of row so have to neglect this approach
+# # space = (num*2)+1-(row*3) when num = 4
 
-for row in range(num):
-    for col in range(num-1-row):
-        print(" ", end = "  ")
-    for col in range(row+1,0,-1):
-        print(col, end = " ")
-    if row > 0:
-        for col in range(row-1):
-            print(" ", end = " ")
-        for col in range(row+1):
-            print(col+1, end = " ")               
-    print()
+# for row in range(num):
+#     for col in range(num-1-row):
+#         print(" ", end = "  ")
+#     for col in range(row+1,0,-1):
+#         print(col, end = " ")
+#     if row > 0:
+#         for col in range(row-1):
+#             print(" ", end = " ")
+#         for col in range(row+1):
+#             print(col+1, end = " ")               
+#     print()
 
-for row in range(num-1):
-    for col in range(row+1):
-        print(" ", end = "  ")
-    for col in range(num-1-row,0,-1):
-        print(col, end = " ")
-    if row < (num-2):
-        for col in range(num-row-3):
-            print(" ", end = " ")
-        for col in range(num-row-1):
-            print(col+1, end = " ")               
-    print()
+# for row in range(num-1):
+#     for col in range(row+1):
+#         print(" ", end = "  ")
+#     for col in range(num-1-row,0,-1):
+#         print(col, end = " ")
+#     if row < (num-2):
+#         for col in range(num-row-3):
+#             print(" ", end = " ")
+#         for col in range(num-row-1):
+#             print(col+1, end = " ")               
+#     print()
