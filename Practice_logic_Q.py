@@ -1570,3 +1570,15 @@
 #         for col in range(num-row-1):
 #             print(col+1, end = " ")               
 #     print()
+
+
+# Q: Alphabet pattern
+
+n = int(input("Enter no of rows: "))
+
+for i in range(n):
+    k = ord('A')+i
+    for j in range(i+1):
+        print(chr(k), end = " ")
+        k += 1
+    print()
