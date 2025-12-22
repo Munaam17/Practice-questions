@@ -1572,13 +1572,154 @@
 #     print()
 
 
-# Q: Alphabet pattern
+# # Q: Alphabet pattern
 
-n = int(input("Enter no of rows: "))
+# n = int(input("Enter no of rows: "))
+# a = ['A','B','C','D','E','F','G','H','I','J','K']
+# for i in range(n):
+#     k = ord('A')+i
+#     # print(a[i], end = " ")
+#     for j in range(i+1,):
+#         print(chr(k), end = " ")
+#         k += 1
+#     print()
 
-for i in range(n):
-    k = ord('A')+i
-    for j in range(i+1):
-        print(chr(k), end = " ")
-        k += 1
-    print()
+# # String pattern 1
+
+# string = input("Enter the string you want the pattern for: ")
+
+# for i in range(len(string)):
+#     for j in range(i+1):
+#         print(string[i], end = " ")
+#     print()
+# print( )
+
+# # String pattern 2
+
+# for i in range(len(string)):
+#     for j in range(i+1):
+#         print(string[j], end = " ")
+#     print()
+# print()
+
+# # String pattern 3
+
+# for i in range(len(string)):
+#     for j in range(len(string)-i-1):
+#         print(" ", end =" ")
+#     for j in range(i+1):
+#         print(string[i], end = " ")
+#     print()
+# print( )
+
+# # String pattern 4
+
+# for i in range(len(string)):
+#     for j in range(len(string)-i-1):
+#         print(" ", end =" ")
+#     for j in range(i+1):
+#         print(string[j], end = " ")
+#     print()
+# print( )
+
+# # String pattern 5
+
+# for i in range(len(string)):
+#     for j in range(len(string)-i):
+#         print(string[j], end = " ")
+#     print()
+# print( )
+
+# # String pattern 6
+
+# for i in range(len(string)):
+#     for j in range(i,len(string)):
+#         print(string[i], end = " ")
+#     print()
+# print( )
+
+# # String pattern 7
+
+# for i in range(len(string)):
+#     for j in range(i):
+#         print(" ", end= " ")
+#     for j in range(len(string)-i):
+#         print(string[j], end = " ")
+#     print()
+# print( )
+
+# # String pattern 8
+
+# for i in range(len(string)):
+#     for j in range(i):
+#         print(" ", end= " ")
+#     for j in range(len(string)-i):
+#         print(string[i], end = " ")
+#     print()
+# print( )
+
+# # String pattern 9
+
+# for i in range(len(string)):
+#     for j in range(i):
+#         print(" ", end= "")
+#     for j in range(len(string)-i):
+#         print(string[i], end = " ")
+#     print()
+# print( )
+
+# # String pattern 10
+
+# for i in range(len(string)):
+#     for j in range(i):
+#         print(" ", end= "")
+#     for j in range(len(string)-i):
+#         print(string[j], end = " ")
+#     print()
+# print( )
+
+# # String pattern 11
+
+# for i in range(len(string)-1,-1,-1): #5
+#     for j in range(len(string)-i-1):
+#         print(" ", end= " ")
+#     for j in range(i+1):
+#         print(string[i], end = " ")
+#     print()
+# print( )
+
+# # String pattern 12
+
+# for i in range(len(string)-1,-1,-1): #5
+#     for j in range(len(string)-i-1):
+#         print(" ", end= " ")
+#     for j in range(i,-1,-1): 
+#         print(string[j], end = " ")
+#     print()
+# print( )
+
+# Q: Factors of a number
+
+num = int(input("Enter the number you want to know the factors for: "))
+a = []
+for i in range(1,num+1):
+    if num % i == 0:
+        a.append(i)
+print(a)
+
+
+# Q: Python program to reverse and add until found palindrome
+P_n = int(input("Enter the number for palindrome: "))
+
+reverse = str(P_n)
+a = reverse[::-1]
+while True:
+    if (a) == str(P_n): #195 - 591
+        print(f"we have got the palindrome of this number: {a}, when entered number was: {reverse}")
+        break
+    else:
+        reverse1 = int(P_n) + int(a)  #786
+        # print(reverse1)
+        P_n = str(reverse1)  #786
+        a = P_n[::-1]
+        # break
