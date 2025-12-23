@@ -1700,16 +1700,16 @@
 
 # Q: Factors of a number
 
-num = int(input("Enter the number you want to know the factors for: "))
-a = []
-for i in range(1,num+1):
-    if num % i == 0:
-        a.append(i)
-print(a)
+# num = int(input("Enter the number you want to know the factors for: "))
+# a = []
+# for i in range(1,num+1):
+#     if num % i == 0:
+#         a.append(i)
+# print(a)
 
 
 # Q: Python program to reverse and add until found palindrome
-P_n = int(input("Enter the number for palindrome: "))
+P_n = 195#int(input("Enter the number for palindrome: "))
 
 reverse = str(P_n)
 a = reverse[::-1]
