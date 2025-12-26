@@ -77,6 +77,45 @@ class Linked_List:
             self.head = new_node
         else:
             print("LL is not empty")
+        
+    
+    def del_begin(self):
+        # DELETING FIRST NODE
+        
+        if self.head is None:
+            print("LL is empty nothing to del")
+        else:
+            self.head = self.head.ref
+
+    def del_end(self):
+        # DELETING THE LAT NODE
+        if self.head is None:
+            print("LL is empty nothing to del")
+        else:
+            n = self.head
+            while n.ref.ref is not None:
+                n = n.ref
+            n.ref = None
+
+    def delete_by_val(self,x):
+        # DELETING ANY VAL IN LL
+
+        if self.head is None:
+            print("can't del LL is empty!")
+            return
+        if x == self.head.data:
+            self.head = self.head.ref
+            return
+        n = self.head
+        while n.ref is not None:
+            if x == n.ref.data:
+                break
+            n = n.ref
+        if n.ref is None:
+            print("not found")
+        else:
+            n.ref = n.ref.ref
+
 
     # print every node of LL
     def print__LL(self):
@@ -88,17 +127,21 @@ class Linked_List:
                 print(n.data, "--->", end = " ")
                 n = n.ref
 
+
 # N1 = Node(3)
 # print(N1)
 LL1 = Linked_List()
-LL1.insert_Empty(35)
-LL1.add_end(2500)
-LL1.add_begin(10)
-LL1.add_end(1000)
-LL1.add_after(1080, 1000)
+# LL1.insert_Empty(35)
+# LL1.add_end(2500)
+# LL1.add_begin(10)
+# LL1.add_end(1000)
+# LL1.add_after(1080, 1000)
 # LL1.add_begin(20)
 # LL1.add_end(2000)
 # LL1.add_before(500, 2500)
 # LL1.add_after(35, 10)
+LL1.delete_by_val(180)
+LL1.del_begin()
+LL1.del_end()
 LL1.print__LL()
 
