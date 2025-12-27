@@ -110,6 +110,7 @@ DLL.add_begin(20)
 DLL.add_end(30)
 DLL.add_after(21,220)
 DLL.add_before(21,20)
+DLL.add_before(21,20)
 DLL.print__D_LL_F()
 # DLL.print__D_LL_R()
 
