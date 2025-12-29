@@ -1727,4 +1727,33 @@ while True:
 
 # Q: int to roman
 
- 
+a = "ali"
+res = ""
+for val in a:
+    res = val + res
+print(res)
+
+b = a[::-1]
+print(b)
+
+def reverse_string(a):
+    if len(a) == 1 or len(a) == 0:
+        return a
+    return reverse_string(a[1:]) + a[0]
+print(reverse_string("123"))
+
+def is_power_of_two_using_odds(n):
+    if n <= 0:
+        return False
+
+    total = 0
+    odd = 1
+
+    while total < n:
+        total += odd
+        print(odd, total)
+        odd += 2
+        print(odd)
+
+    return total == n, total, odd
+print(is_power_of_two_using_odds(788544))
