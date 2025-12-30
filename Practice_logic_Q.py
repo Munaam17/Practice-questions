@@ -1742,6 +1742,9 @@ def reverse_string(a):
     return reverse_string(a[1:]) + a[0]
 print(reverse_string("123"))
 
+
+# Q: Perfect numbers 
+
 def is_power_of_two_using_odds(n):
     if n <= 0:
         return False
@@ -1757,3 +1760,18 @@ def is_power_of_two_using_odds(n):
 
     return total == n, total, odd
 print(is_power_of_two_using_odds(788544))
+
+# Q: Power of 2
+
+num = int(input("Enter the int number: "))
+i = 0
+res = 0
+while res < num:
+    res = 1 << i
+    print(res, 3 << i)
+    if res == num:
+        print("Entered number is power of 2, 2 power of", i)
+        break
+    i += 1
+else:
+    print("No number isn't power of 2")
