@@ -1794,4 +1794,17 @@ if number == 1:
     print(f"{inp} is a Happy number")
 else: 
     print(f"{inp} is not a Happy number")
-        
+
+
+# Q: Star shape printing
+row = int(input("Enter the number of rows: "))
+col = row + row - 5
+mid = col // 2
+
+for i in range(row):
+    for j in range(col):
+        if i == 2 or i == (row-3) or i + j == mid or j - i == mid or i - j == 2 or i + j == col+1:
+            print("*", end = "")
+        else:
+            print(" ", end = "")
+    print()
