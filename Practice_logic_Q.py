@@ -1775,3 +1775,23 @@ while res < num:
     i += 1
 else:
     print("No number isn't power of 2")
+
+
+# Q: Happy numbers
+# 13 --> 1**2 + 3**2 = 10 --> 1**2 + 0**2 = 1
+number = int(input("Enter the you need to know if it's Happy number or not: "))
+inp = number
+
+while number != 1 and number != 4:
+    store = 0
+    while number != 0:  #13 != 0, 1 != 0
+        cal = number % 10 #13 % 10 = 3, 1 % 10 = 1
+        store += cal ** 2#3**2= 9 + 1**2 = 10 
+        number = number // 10  #13//10 = 1
+        # print(number)
+    number = store
+if number == 1:
+    print(f"{inp} is a Happy number")
+else: 
+    print(f"{inp} is not a Happy number")
+        
