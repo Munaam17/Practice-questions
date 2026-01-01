@@ -1808,3 +1808,6 @@ for i in range(row):
         else:
             print(" ", end = "")
     print()
+
+
+# Q Leetcode issue
