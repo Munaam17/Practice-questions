@@ -1709,105 +1709,142 @@
 
 
 # Q: Python program to reverse and add until found palindrome
-P_n = 195#int(input("Enter the number for palindrome: "))
+# P_n = 195#int(input("Enter the number for palindrome: "))
 
-reverse = str(P_n)
-a = reverse[::-1]
-while True:
-    if (a) == str(P_n): #195 - 591
-        print(f"we have got the palindrome of this number: {a}, when entered number was: {reverse}")
-        break
-    else:
-        reverse1 = int(P_n) + int(a)  #786
-        # print(reverse1)
-        P_n = str(reverse1)  #786
-        a = P_n[::-1]
-        # break
+# reverse = str(P_n)
+# a = reverse[::-1]
+# while True:
+#     if (a) == str(P_n): #195 - 591
+#         print(f"we have got the palindrome of this number: {a}, when entered number was: {reverse}")
+#         break
+#     else:
+#         reverse1 = int(P_n) + int(a)  #786
+#         # print(reverse1)
+#         P_n = str(reverse1)  #786
+#         a = P_n[::-1]
+#         # break
 
 
-# Q: int to roman
+# # Q: int to roman
 
-a = "ali"
-res = ""
-for val in a:
-    res = val + res
-print(res)
+# a = "ali"
+# res = ""
+# for val in a:
+#     res = val + res
+# print(res)
 
-b = a[::-1]
-print(b)
+# b = a[::-1]
+# print(b)
 
-def reverse_string(a):
-    if len(a) == 1 or len(a) == 0:
-        return a
-    return reverse_string(a[1:]) + a[0]
-print(reverse_string("123"))
+# def reverse_string(a):
+#     if len(a) == 1 or len(a) == 0:
+#         return a
+#     return reverse_string(a[1:]) + a[0]
+# print(reverse_string("123"))
 
 
 # Q: Perfect numbers 
 
-def is_power_of_two_using_odds(n):
-    if n <= 0:
-        return False
+# def is_power_of_two_using_odds(n):
+#     if n <= 0:
+#         return False
 
-    total = 0
-    odd = 1
+#     total = 0
+#     odd = 1
 
-    while total < n:
-        total += odd
-        print(odd, total)
-        odd += 2
-        print(odd)
+#     while total < n:
+#         total += odd
+#         print(odd, total)
+#         odd += 2
+#         print(odd)
 
-    return total == n, total, odd
-print(is_power_of_two_using_odds(788544))
+#     return total == n, total, odd
+# print(is_power_of_two_using_odds(788544))
 
-# Q: Power of 2
+# # Q: Power of 2
 
-num = int(input("Enter the int number: "))
-i = 0
-res = 0
-while res < num:
-    res = 1 << i
-    print(res, 3 << i)
-    if res == num:
-        print("Entered number is power of 2, 2 power of", i)
-        break
-    i += 1
-else:
-    print("No number isn't power of 2")
+# num = int(input("Enter the int number: "))
+# i = 0
+# res = 0
+# while res < num:
+#     res = 1 << i
+#     print(res, 3 << i)
+#     if res == num:
+#         print("Entered number is power of 2, 2 power of", i)
+#         break
+#     i += 1
+# else:
+#     print("No number isn't power of 2")
 
 
-# Q: Happy numbers
-# 13 --> 1**2 + 3**2 = 10 --> 1**2 + 0**2 = 1
-number = int(input("Enter the you need to know if it's Happy number or not: "))
-inp = number
+# # Q: Happy numbers
+# # 13 --> 1**2 + 3**2 = 10 --> 1**2 + 0**2 = 1
+# number = int(input("Enter the you need to know if it's Happy number or not: "))
+# inp = number
 
-while number != 1 and number != 4:
-    store = 0
-    while number != 0:  #13 != 0, 1 != 0
-        cal = number % 10 #13 % 10 = 3, 1 % 10 = 1
-        store += cal ** 2#3**2= 9 + 1**2 = 10 
-        number = number // 10  #13//10 = 1
-        # print(number)
-    number = store
-if number == 1:
-    print(f"{inp} is a Happy number")
-else: 
-    print(f"{inp} is not a Happy number")
+# while number != 1 and number != 4:
+#     store = 0
+#     while number != 0:  #13 != 0, 1 != 0
+#         cal = number % 10 #13 % 10 = 3, 1 % 10 = 1
+#         store += cal ** 2#3**2= 9 + 1**2 = 10 
+#         number = number // 10  #13//10 = 1
+#         # print(number)
+#     number = store
+# if number == 1:
+#     print(f"{inp} is a Happy number")
+# else: 
+#     print(f"{inp} is not a Happy number")
 
 
 # Q: Star shape printing
-row = int(input("Enter the number of rows: "))
-col = row + row - 5
-mid = col // 2
+# row = int(input("Enter the number of rows: "))
+# col = row + row - 5
+# mid = col // 2
 
-for i in range(row):
-    for j in range(col):
-        if i == 2 or i == (row-3) or i + j == mid or j - i == mid or i - j == 2 or i + j == col+1:
-            print("*", end = "")
-        else:
-            print(" ", end = "")
-    print()
+# for i in range(row):
+#     for j in range(col):
+#         if i == 2 or i == (row-3) or i + j == mid or j - i == mid or i - j == 2 or i + j == col+1:
+#             print("*", end = "")
+#         else:
+#             print(" ", end = "")
+#     print()
 
 
 # Q Leetcode issue
+# Valid Parentheses
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = [] 
+        for ch in s:
+            # Storing the opening brackets
+            if ch == "(" or ch == "{" or ch == "[":
+                stack.append(ch)
+
+            else:
+                # if stack is empty
+                if not stack:
+                    return False
+                
+                # pop the last element to compare
+                last = stack.pop()
+
+                if ch == ")" and last != "(":
+                    return False
+                if ch == "}" and last != "{":
+                    return False
+                if ch == "]" and last != "[":
+                    return False
+                
+        return len(stack) == 0
+
+ob = Solution()
+print(ob.isValid("()[{[]()[][]}]"))
+
+
+# print(arr)
+
+
+
+
+
+    
