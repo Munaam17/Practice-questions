@@ -61,6 +61,38 @@ class BST:
             self.rchild.postOrder()
         print(self.key, end = " ")
 
+    def delete(self, data):
+        if self.key is None:
+            print("Tree is empty!")
+            return
+        if data < self.key:
+            if self.lchild:
+                self.lchild = self.lchild.delete(data)
+            else:
+                print("Given Node isn't present in the tree")
+        elif data > self.key:
+            if self.rchild:
+                self.rchild = self.rchild.delete(data)
+            else:
+                print("Given Node isn't present in the tree")
+        else:
+            # for one child nodes
+            if self.lchild is None:
+                temp = self.rchild
+                self = None
+                return temp
+            if self.rchild is None:
+                temp = self.lchild
+                self = None
+                return temp
+            
+            # for 2 child nodes
+            node = self.rchild
+            while node.lchild:
+                node = self.lchild
+            self.key = node.key
+            self.rchild = self.rchild.delete(node.key)
+        return self
 
 root = BST(None)
 list1 = [1,2,5,1,2,10,20,8]
@@ -75,6 +107,10 @@ root.inOrder()
 print()
 print("Post-order")
 root.postOrder()
+
+root.delete(10)
+print('\n'"After deleting")
+root.preOrder()
 # print(root.rchild)
 # print(root.lchild.key, root.lchild.lchild, root.lchild.rchild)
 # print(root.rchild.key, root.rchild.lchild, root.rchild.rchild)
