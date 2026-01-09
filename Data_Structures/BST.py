@@ -23,7 +23,7 @@ class BST:
                 self.rchild = BST(data)     
     #searching
     def search(self, data):
-        if self.key == None:
+        if self.key == data:
             print("Node is found!")
             return
         if data < self.key:
@@ -37,17 +37,45 @@ class BST:
             else:
                 print("Node is not present in the tree!")           
 
+    # Pre-order traversal
+    def preOrder(self):
+        print(self.key, end = " ")
+        if self.lchild:
+            self.lchild.preOrder()
+        if self.rchild:
+            self.rchild.preOrder()
+
+    # In-order traversal
+    def inOrder(self):
+        if self.lchild:
+            self.lchild.inOrder()
+        print(self.key, end = " ")
+        if self.rchild:
+            self.rchild.inOrder()
+
+    # Post-order traversal
+    def postOrder(self):
+        if self.lchild:
+            self.lchild.postOrder()
+        if self.rchild:
+            self.rchild.postOrder()
+        print(self.key, end = " ")
 
 
-root = BST(10)
-# root.lchild = BST(5)
-# root.rchild = BST(2)
-# root.rchild.rchild = BST(3)
+root = BST(None)
 list1 = [1,2,5,1,2,10,20,8]
 for i in list1:
     root.insert(i)
-root.search(3)
-print(root.rchild)
+root.search(1)
+print("Pre-order")
+root.preOrder()
+print()
+print("In-order")
+root.inOrder()
+print()
+print("Post-order")
+root.postOrder()
+# print(root.rchild)
 # print(root.lchild.key, root.lchild.lchild, root.lchild.rchild)
 # print(root.rchild.key, root.rchild.lchild, root.rchild.rchild)
 # print(root.rchild.rchild.key, root.rchild.rchild.lchild, root.rchild.rchild.rchild)
