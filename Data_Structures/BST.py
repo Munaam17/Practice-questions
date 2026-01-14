@@ -93,9 +93,23 @@ class BST:
             self.key = node.key
             self.rchild = self.rchild.delete(node.key)
         return self
+    
+    #Finding the min val in BST
+    def min_node(self):
+        current = self
+        if current.lchild:
+            current = current.lchild
+        print("Node with Smallest Key is:", current.key)
+    #Finding the max val in BST
+    def max_node(self):
+        current = self
+        if current.rchild:
+            current = current.rchild
+        print("Node with highest Key is:", current.key)
+
 
 root = BST(10)
-list1 = [1,2,5,1,2,10,20,8]
+list1 = [1,2,5,2,67,20,8]
 for i in list1:
     root.insert(i)
 root.search(1)
@@ -107,13 +121,16 @@ root.inOrder()
 print()
 print("Post-order")
 root.postOrder()
-root.postOrder()
-root.postOrder()
+# root.postOrder()
+# root.postOrder()
 
 root.delete(10)
 root.delete(1)
 print('\n'"After deleting")
 root.preOrder()
+print()
+root.min_node()
+root.max_node()
 # root.preOrder()
 # root.preOrder()
 # print(root.rchild)
