@@ -94,7 +94,7 @@ class BST:
             self.rchild = self.rchild.delete(node.key)
         return self
 
-root = BST(None)
+root = BST(10)
 list1 = [1,2,5,1,2,10,20,8]
 for i in list1:
     root.insert(i)
@@ -111,10 +111,11 @@ root.postOrder()
 root.postOrder()
 
 root.delete(10)
+root.delete(1)
 print('\n'"After deleting")
 root.preOrder()
-root.preOrder()
-root.preOrder()
+# root.preOrder()
+# root.preOrder()
 # print(root.rchild)
 # print(root.lchild.key, root.lchild.lchild, root.lchild.rchild)
 # print(root.rchild.key, root.rchild.lchild, root.rchild.rchild)
