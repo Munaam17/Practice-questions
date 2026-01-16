@@ -121,7 +121,7 @@ root.inOrder()
 print()
 print("Post-order")
 root.postOrder()
-# root.postOrder()
+root.postOrder()
 # root.postOrder()
 
 root.delete(10)
