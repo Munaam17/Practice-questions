@@ -1873,5 +1873,13 @@ for i in range(n):
         print('*', end = " ")  
     print()
 
+print()
 
-    
+jk = 9
+
+for i in range(jk):
+    for j in range(i):
+        print(" ", end = "")
+    for j in range(jk - i):
+        print("*", end =" ")
+    print()
