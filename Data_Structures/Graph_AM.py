@@ -42,6 +42,35 @@ def add_edge_d(v1, v2, cost):
 
         print(index1), print(index2)
 
+# for deleting the node in undirected, undirected from AM
+
+def del_node(v):
+    global node_count
+    if v not in nodes:
+        print(v,"is not present in nodes")
+    else:
+        index1 = nodes.index(v)
+        node_count -= 1
+        nodes.pop(index1)
+        graph.pop(index1)
+        for i in graph:
+            i.pop(index1)
+
+# for deleting the node in directed, undirected from AM
+
+def del_node_d(v1, v2):
+    if v1 not in nodes:
+        print(v1, "is not present in graph")
+    elif v2 not in nodes:
+        print(v1, "is not present in graph")
+    else:
+        index1 = nodes.index(v1)
+        index2 = nodes.index(v2)
+        graph [index1][index2] = 0
+        graph [index2][index1] = 0
+
+        print(index1), print(index2)
+
 
 # for printing in adjacency matrix format
 
@@ -69,7 +98,12 @@ add_edge_d("A", "C", 70)
 add_edge_d("B", "A", 60)
 print("Nodes:",nodes)
 print('Graph:',graph)
+print_graph()
+del_node("B")
+del_node_d("A", "C")
 # print(matrix1)
 print('After adding the nodes')
+print("Nodes:",nodes)
+print('Graph:',graph)
 
 print_graph()
