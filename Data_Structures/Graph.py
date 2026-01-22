@@ -7,10 +7,10 @@ def add_node(v):
         node_count += 1
         nodes.append(v)
         for n in graph:
-            n.append(0)
+            n.append(1)
         temp = []
         for i in range(node_count):
-            temp.append(1)
+            temp.append(0)
         graph.append(temp)
 
 # for printing in adjacency matrix format
@@ -28,4 +28,4 @@ add_node("A")
 add_node("B")
 add_node("C")
 print(graph)
-print()
+print_graph()
