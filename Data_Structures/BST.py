@@ -97,19 +97,19 @@ class BST:
     #Finding the min val in BST
     def min_node(self):
         current = self
-        if current.lchild:
+        while current.lchild:
             current = current.lchild
         print("Node with Smallest Key is:", current.key)
     #Finding the max val in BST
     def max_node(self):
         current = self
-        if current.rchild:
+        while current.rchild:
             current = current.rchild
         print("Node with highest Key is:", current.key)
 
 
 root = BST(10)
-list1 = [1,2,5,2,67,20,8]
+list1 = [8, 1, 47, 0, 90, 3,  67, 80]
 for i in list1:
     root.insert(i)
 root.search(1)
