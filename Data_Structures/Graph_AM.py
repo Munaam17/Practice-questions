@@ -56,9 +56,9 @@ def del_node(v):
         for i in graph:
             i.pop(index1)
 
-# for deleting the node in directed, undirected from AM
+# for deleting the node in directed for AM
 
-def del_node_d(v1, v2):
+def del_edgd(v1, v2):
     if v1 not in nodes:
         print(v1, "is not present in graph")
     elif v2 not in nodes:
@@ -67,9 +67,7 @@ def del_node_d(v1, v2):
         index1 = nodes.index(v1)
         index2 = nodes.index(v2)
         graph [index1][index2] = 0
-        graph [index2][index1] = 0
-
-        print(index1), print(index2)
+        # graph [index2][index1] = 0
 
 
 # for printing in adjacency matrix format
@@ -100,7 +98,7 @@ print("Nodes:",nodes)
 print('Graph:',graph)
 print_graph()
 del_node("B")
-del_node_d("A", "C")
+del_edgd("A", "C")
 # print(matrix1)
 print('After adding the nodes')
 print("Nodes:",nodes)
