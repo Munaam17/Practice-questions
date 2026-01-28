@@ -12,20 +12,20 @@ def add_edge(v1, v2, cost):
     elif v2 not in graph:
         print(v2, "is not present in graph")
     else:
-        list1 = (v2, cost)
-        list2 = (v1, cost)
-        graph[v1].append(list1)
-        graph[v2].append(list2)
+        # list1 = (v2, cost)
+        # list2 = (v1, cost)
+        graph[v1].append(v2)
+        graph[v2].append(v1)
 
 # Adding an edge in directional graph with cost
-def add_edge_d(v1, v2, cost):
-    if v1 not in graph:
-        print(v1, "is not present in graph")
-    elif v2 not in graph:
-        print(v2, "is not present in graph")
-    else:
-        list1 = (v2, cost)
-        graph[v1].append(list1)
+# def add_edge_d(v1, v2, cost):
+#     if v1 not in graph:
+#         print(v1, "is not present in graph")
+#     elif v2 not in graph:
+#         print(v2, "is not present in graph")
+#     else:
+#         list1 = (v2, cost)
+#         graph[v1].append(list1)
 
 # deleting the node from undirected & directed graph
 
@@ -53,6 +53,16 @@ def del_nod_w(v):
                     list1.remove(j)
                     break
 
+def DFS(node, visited, graph):
+    if node not in graph:
+        print(node,"is not present in graph")
+        return
+    if node not in visited:
+        print(node)
+        visited.add(node)
+        for i in graph[node]:
+            DFS(i, visited, graph)
+
 
 graph = {}
 add_node("A")
@@ -66,12 +76,13 @@ add_edge("D", "F", 30)
 add_edge("D", "B", 20)
 add_edge("A", "F", 30)
 add_edge("D", "B", 20)
-add_edge_d("D", "F", 30)
-add_edge_d("A", "D", 20)
-add_edge_d("C", "A", 30)
-del_node("F")
-# del_node("C")
-del_nod_w("B")
-del_nod_w("A")
+# add_edge_d("D", "F", 30)
+# add_edge_d("A", "D", 20)
+# add_edge_d("C", "A", 30)
+DFS("A", set(), graph)
+# del_node("F")
+# # del_node("C")
+# del_nod_w("B")
+# del_nod_w("A")
 print(graph)
 
