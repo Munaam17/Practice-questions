@@ -63,6 +63,21 @@ def DFS(node, visited, graph):
         for i in graph[node]:
             DFS(i, visited, graph)
 
+def DFSiterative(node, graph):
+    visited = set()
+    if node not in graph:
+        print("node is not present in the graph")
+        return
+    stack = []
+    stack.append(node)
+    while stack:
+        current = stack.pop()
+        if current not in visited:
+            print(current)
+            visited.add(current)
+            for i in graph[current]:
+                stack.append(i)
+
 
 graph = {}
 add_node("A")
@@ -80,6 +95,8 @@ add_edge("D", "B", 20)
 # add_edge_d("A", "D", 20)
 # add_edge_d("C", "A", 30)
 DFS("A", set(), graph)
+print()
+DFSiterative("A", graph)
 # del_node("F")
 # # del_node("C")
 # del_nod_w("B")
