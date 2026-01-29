@@ -79,6 +79,25 @@ def DFSiterative(node, graph):
                 stack.append(i)
 
 
+# BFS
+
+def BFS(graph, visited, node):
+    if node not in graph:
+        print("Node not present in graph")
+        return
+    Queue = []
+    Queue.append(node)
+    visited.add(node)
+    while Queue:
+        current = Queue.pop(0)
+        print(current)
+        for i in graph[current]:
+            if i not in visited:
+                Queue.append(i)
+                visited.add(i)
+
+
+
 graph = {}
 add_node("A")
 add_node("B")
@@ -97,6 +116,8 @@ add_edge("D", "B", 20)
 DFS("A", set(), graph)
 print()
 DFSiterative("A", graph)
+print()
+BFS(graph, set(), "C")
 # del_node("F")
 # # del_node("C")
 # del_nod_w("B")
