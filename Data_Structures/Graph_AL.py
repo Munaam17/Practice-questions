@@ -53,74 +53,88 @@ def del_nod_w(v):
                     list1.remove(j)
                     break
 
-def DFS(node, visited, graph):
-    if node not in graph:
-        print(node,"is not present in graph")
-        return
-    if node not in visited:
-        print(node)
-        visited.add(node)
-        for i in graph[node]:
-            DFS(i, visited, graph)
+# DFS
 
-def DFSiterative(node, graph):
-    visited = set()
-    if node not in graph:
-        print("node is not present in the graph")
-        return
-    stack = []
-    stack.append(node)
-    while stack:
-        current = stack.pop()
-        if current not in visited:
-            print(current)
-            visited.add(current)
-            for i in graph[current]:
-                stack.append(i)
+# def DFS(node, visited, graph):
+#     if node not in graph:
+#         print(node,"is not present in graph")
+#         return
+#     if node not in visited:
+#         print(node)
+#         visited.add(node)
+#         for i in graph[node]:
+#             DFS(i, visited, graph)
+
+# def DFSiterative(node, graph):
+#     visited = set()
+#     if node not in graph:
+#         print("node is not present in the graph")
+#         return
+#     stack = []
+#     stack.append(node)
+#     while stack:
+#         current = stack.pop()
+#         if current not in visited:
+#             print(current)
+#             visited.add(current)
+#             for i in graph[current]:
+#                 stack.append(i)
 
 
 # BFS
 
-def BFS(graph, visited, node):
+def BFS(graph, visited1, node):
     if node not in graph:
         print("Node not present in graph")
         return
     Queue = []
     Queue.append(node)
-    visited.add(node)
+    visited1.add(node)
     while Queue:
         current = Queue.pop(0)
         print(current)
         for i in graph[current]:
-            if i not in visited:
+            if i not in visited1:
                 Queue.append(i)
-                visited.add(i)
+                visited1.add(i)
 
 
 
 graph = {}
+visited1 = set()
 add_node("A")
 add_node("B")
 add_node("C")
 add_node("D")
 add_node("F")
+add_node("E")
 add_edge("A", "B", 50)
 add_edge("F", "C", 40)
 add_edge("D", "F", 30)
 add_edge("D", "B", 20)
 add_edge("A", "F", 30)
 add_edge("D", "B", 20)
+# add_edge("E")
 # add_edge_d("D", "F", 30)
 # add_edge_d("A", "D", 20)
 # add_edge_d("C", "A", 30)
-DFS("A", set(), graph)
+# DFS("A", set(), graph)
+# print()
+# DFSiterative("A", graph)
+
 print()
-DFSiterative("A", graph)
-print()
-BFS(graph, set(), "C")
+BFS(graph, visited1, "C")
 # del_node("F")
 # # del_node("C")
 # del_nod_w("B")
 # del_nod_w("A")
 print(graph)
+
+# For checking if the graph is connected or disconnected
+for i in list(graph):
+    if i not in visited1:
+        print("Given graph is a disconnected graph")
+        break
+else:
+    print("Graph is not disconnect, it's connected")
 
