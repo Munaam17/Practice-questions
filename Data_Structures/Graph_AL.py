@@ -123,7 +123,7 @@ add_edge("D", "B", 20)
 # DFSiterative("A", graph)
 
 print()
-BFS(graph, visited1, "C")
+BFS(graph, visited1, "E")
 # del_node("F")
 # # del_node("C")
 # del_nod_w("B")
