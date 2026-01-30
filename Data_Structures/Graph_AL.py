@@ -1,3 +1,5 @@
+from collections import deque
+
 # Adding a node in undirectional graph
 def add_node(v):
     if v in graph:
@@ -98,6 +100,29 @@ def BFS(graph, visited1, node):
                 Queue.append(i)
                 visited1.add(i)
 
+def Shortest_path(node, target, graph):
+    if node not in graph:
+        print(node,"not present in graph")
+    elif target not in graph:
+        print(target,"not present in graph")
+    else:
+        visited2 ={}
+        queue = deque()
+        visited2[node] = None
+        queue.append(node)
+        while queue:
+            current = queue.popleft()
+            if current == target:
+                path = []
+                while current is not None:
+                    path.append(current)
+                    current = visited2[current]
+                return path[::-1]
+            for i in graph[current]:
+                if i not in visited2:
+                    visited2[i] = current
+                    queue.append(i)
+        return None
 
 
 graph = {}
@@ -123,7 +148,9 @@ add_edge("D", "B", 20)
 # DFSiterative("A", graph)
 
 print()
-BFS(graph, visited1, "E")
+BFS(graph, visited1, "A")
+print()
+print(Shortest_path("A","G", graph))
 # del_node("F")
 # # del_node("C")
 # del_nod_w("B")
@@ -137,4 +164,6 @@ for i in list(graph):
         break
 else:
     print("Graph is not disconnect, it's connected")
+
+print(list(graph))
 
