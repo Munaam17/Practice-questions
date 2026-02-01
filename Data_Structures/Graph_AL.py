@@ -147,8 +147,10 @@ add_edge("D", "B", 20)
 # print()
 # DFSiterative("A", graph)
 
-print()
+
 BFS(graph, visited1, "A")
+print()
+BFS(graph, visited1, "E")
 print()
 print(Shortest_path("A","G", graph))
 print(Shortest_path("A","C", graph))
