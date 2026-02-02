@@ -8,7 +8,7 @@ def add_node(v):
         graph[v] = []
 
 # Adding an edge in undirectional graph with cost
-def add_edge(v1, v2, cost):
+def add_edge(v1, v2):
     if v1 not in graph:
         print(v1, "is not present in graph")
     elif v2 not in graph:
@@ -127,18 +127,31 @@ def Shortest_path(node, target, graph):
 
 graph = {}
 visited1 = set()
+# add_node("A")
+# add_node("B")
+# add_node("C")
+# add_node("D")
+# add_node("F")
+# add_node("E")
+# add_edge("A", "B", 50)
+# add_edge("F", "C", 40)
+# add_edge("D", "F", 30)
+# add_edge("D", "B", 20)
+# add_edge("A", "F", 30)
+# add_edge("D", "B", 20)
+
 add_node("A")
 add_node("B")
 add_node("C")
 add_node("D")
 add_node("F")
 add_node("E")
-add_edge("A", "B", 50)
-add_edge("F", "C", 40)
-add_edge("D", "F", 30)
-add_edge("D", "B", 20)
-add_edge("A", "F", 30)
-add_edge("D", "B", 20)
+add_edge("A", "B")
+add_edge("F", "C")
+add_edge("B", "F")
+add_edge("C", "B")
+add_edge("E", "A")
+add_edge("D", "E")
 # add_edge("E")
 # add_edge_d("D", "F", 30)
 # add_edge_d("A", "D", 20)
