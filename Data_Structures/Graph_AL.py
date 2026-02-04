@@ -142,6 +142,7 @@ visited1 = set()
 
 # Addition of node and edge
 add_node("A")
+add_node("a")
 add_node("B")
 add_node("C")
 add_node("D")
