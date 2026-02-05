@@ -1883,3 +1883,18 @@ for i in range(jk):
     for j in range(jk - i):
         print("*", end =" ")
     print()
+
+
+nums = range(10)
+even_squares = {n: n*n for n in nums if n % 2 == 0}
+print(even_squares, nums)
+
+graph = {"A": ["B", 4],
+         "C": ["D", 5]}
+# distance = {item : float("inf") for item in graph}
+# print(distance)
+
+for i in graph:
+    graph[i] = float("inf")
+
+print(graph)
