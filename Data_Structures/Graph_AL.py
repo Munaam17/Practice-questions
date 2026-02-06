@@ -230,7 +230,13 @@ elif target not in graph:
     print(target,"not in graph")
 else: 
     smallest_dist, parent_node = Dijkstra(graph, source)
-    print(shortest_path(parent_node,target))
+    for i in smallest_dist:
+        print(f"shortest distance from {source} to {i} is:" )
+        print(smallest_dist[i])
+        print(f"shortest path from {source} to {i} is:")
+        print(shortest_path(parent_node,i))
+        print("-------------------------------------")
+
 # que = []
 # heapq.heappush(que, (3, 9))
 # heapq.heappush(que, (1, 6))
