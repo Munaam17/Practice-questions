@@ -1,4 +1,5 @@
 from collections import deque
+import heapq    
 
 # Adding a node in undirectional graph
 def add_node(v):
@@ -8,26 +9,26 @@ def add_node(v):
         graph[v] = []
 
 # Adding an edge in undirectional graph with cost
-def add_edge(v1, v2):
-    if v1 not in graph:
-        print(v1, "is not present in graph")
-    elif v2 not in graph:
-        print(v2, "is not present in graph")
-    else:
-        # list1 = (v2, cost)
-        # list2 = (v1, cost)
-        graph[v1].append(v2)
-        graph[v2].append(v1)
-
-# Adding an edge in directional graph with cost
-# def add_edge_d(v1, v2, cost):
+# def add_edge(v1, v2, cost):
 #     if v1 not in graph:
 #         print(v1, "is not present in graph")
 #     elif v2 not in graph:
 #         print(v2, "is not present in graph")
 #     else:
 #         list1 = (v2, cost)
-#         graph[v1].append(list1)
+#         list2 = (v1, cost)
+#         graph[v1].append(v2)
+#         graph[v2].append(v1)
+
+# Adding an edge in directional graph with cost
+def add_edge_d(v1, v2, cost):
+    if v1 not in graph:
+        print(v1, "is not present in graph")
+    elif v2 not in graph:
+        print(v2, "is not present in graph")
+    else:
+        list1 = (v2, cost)
+        graph[v1].append(list1)
 
 # deleting the node from undirected & directed graph
 
@@ -149,13 +150,13 @@ add_node("D")
 add_node("F")
 add_node("E")
 add_node("G")
-add_edge("A", "B")
-add_edge("F", "C")
-add_edge("B", "F")
-add_edge("G", "E")
-add_edge("C", "B")
-add_edge("E", "A")
-add_edge("D", "E")
+add_edge_d("A", "B", 1)
+add_edge_d("F", "C", 3)
+add_edge_d("B", "F", 5)
+add_edge_d("G", "E", 6)
+add_edge_d("C", "B", 3)
+add_edge_d("E", "A", 6)
+add_edge_d("D", "E", 7)
 # add_edge("E")
 # add_edge_d("D", "F", 30)
 # add_edge_d("A", "D", 20)
@@ -165,13 +166,13 @@ add_edge("D", "E")
 # DFSiterative("A", graph)
 
 
-BFS(graph, visited1, "A")
+# BFS(graph, visited1, "A")
 print()
-BFS(graph, visited1, "E")
+# BFS(graph, visited1, "E")
 print()
-print(Shortest_path("A","G", graph))
-print(Shortest_path("A","C", graph))
-# del_node("F")
+# print(Shortest_path("A","G", graph))
+# print(Shortest_path("A","C", graph))
+# # del_node("F")
 # # del_node("C")
 # del_nod_w("B")
 # del_nod_w("A")
@@ -188,3 +189,34 @@ else:
 print(list(graph))
 
 # Dijkstra's Algorithm
+
+def Dijkstra(graph, start):
+    if start not in graph:
+        print(start,"not present in graph!")
+        return
+    distance = {item:float("inf") for item in graph}
+    distance [start] = 0
+    queue = [(0, start)]
+    while queue:
+        curr_dist, curr_node = heapq.heappop(queue)
+        if curr_dist > distance[curr_node]:
+            continue
+        # for node, weight in graph [curr_node]:
+        for node, weight in graph [curr_node]:
+            new_dist = curr_dist + weight
+            if new_dist < distance [node]:
+                distance[node] = new_dist
+                heapq.heappush(queue,(new_dist,node))
+
+    return distance
+
+print(Dijkstra(graph, "A"))
+
+# que = []
+# heapq.heappush(que, (3, 9))
+# heapq.heappush(que, (1, 6))
+# heapq.heappush(que, (2, 3))
+
+# print(heapq.heappop(que))
+# print(heapq.heappop(que))
+# print(heapq.heappop(que))
