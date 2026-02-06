@@ -208,6 +208,7 @@ def Dijkstra(graph, start):
             if new_dist < distance [node]:
                 distance[node] = new_dist
                 parent[node] = curr_node       # store parent
+                print(parent[node])
                 heapq.heappush(queue,(new_dist,node))
 
     return distance, parent
@@ -223,7 +224,7 @@ def shortest_path(parent, target):
     return path[::-1]
 
 source = "A"
-target = "F"
+target = "C"
 if source not in graph:
     print(source,"not in graph")
 elif target not in graph:
