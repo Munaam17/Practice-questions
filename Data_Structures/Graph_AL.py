@@ -196,6 +196,7 @@ def Dijkstra(graph, start):
         return
     distance = {item:float("inf") for item in graph}
     distance [start] = 0
+    parent = {node: None for node in graph}  # for path reconstruction
     queue = [(0, start)]
     while queue:
         curr_dist, curr_node = heapq.heappop(queue)
@@ -206,12 +207,30 @@ def Dijkstra(graph, start):
             new_dist = curr_dist + weight
             if new_dist < distance [node]:
                 distance[node] = new_dist
+                parent[node] = curr_node       # store parent
                 heapq.heappush(queue,(new_dist,node))
 
-    return distance
+    return distance, parent
 
 print(Dijkstra(graph, "A"))
 
+def shortest_path(parent, target):
+    path = []
+    current = target    
+    while current:
+        path.append(current)
+        current= parent[current]
+    return path[::-1]
+
+source = "A"
+target = "F"
+if source not in graph:
+    print(source,"not in graph")
+elif target not in graph:
+    print(target,"not in graph")
+else: 
+    smallest_dist, parent_node = Dijkstra(graph, source)
+    print(shortest_path(parent_node,target))
 # que = []
 # heapq.heappush(que, (3, 9))
 # heapq.heappush(que, (1, 6))
