@@ -19,3 +19,13 @@ print(f"value is: {dictionary ["d"]}")
 del dictionary ["a"]
 
 print(dictionary)
+
+# insert (key, val)
+
+# 1- Find the hash code, hash(key) = hash code
+# 2- Calculate index
+# 3- Check slot is empty (bucket in the index is empty)
+# if bucket is empty insert the key, val pair
+# if there is collision
+#     use chaining
+#     use open addressing
