@@ -36,7 +36,7 @@ class Solution:
     
 # ----------------- Internal call -----------------
 # Create lists
-list1 = ListNode(1, ListNode(5, ListNode(8)))
+list1 = ListNode(1, ListNode(5, ListNode(8, ListNode(8))))
 list2 = ListNode(1, ListNode(3, ListNode(4, ListNode(9))))
 
 # Call the function
