@@ -43,7 +43,7 @@ list2 = ListNode(1, ListNode(3, ListNode(4, ListNode(9))))
 solution = Solution()
 merged = solution.mergeTwoLists(list1, list2)
 
-# Directly print the merged list
+## Directly print the merged list
 cur = merged
 while cur:
     print(cur.val, end=" -> " if cur.next else "")
