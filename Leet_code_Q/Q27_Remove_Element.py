@@ -15,7 +15,18 @@ class Solution:
                 i += 1
         print(nums)
 
-
+    def removeElement1(self, nums: list[int], val: int) -> int:
+        k = 0  # index for placing non-val elements
+        
+        for i in range(len(nums)):
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+                
+        return k, nums[:k]
+    
 Ob = Solution()
-Ob.removeElement([2,1,3,0,4,5,2], 2)
+Ob.removeElement([1,0,4,0,9,0,2,1], 0)
+print(Ob.removeElement1([2,1,3,0,4,5,2], 2))
+
 
