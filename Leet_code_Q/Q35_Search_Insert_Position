@@ -1,6 +1,7 @@
 from typing import List
 
 class Solution:
+    # Using Linear Search 
     def searchInsert(self, nums: List[int], target: int) -> int:
         for i in range(len(nums)):
             if target <= nums[i]:
