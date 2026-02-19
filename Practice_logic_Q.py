@@ -1898,3 +1898,17 @@ for i in graph:
     graph[i] = float("inf")
 
 print(graph)
+
+for i in range(n):
+    for sp in range(n-i-1):
+        print(" ", end = "")
+    for str in range(i+1):
+        print("*", end = " ")
+    print()
+
+for i in range(n):
+    for sp in range(i):
+        print(" ", end = "")
+    for str in range(i,n):
+        print("*", end = " ")
+    print()
