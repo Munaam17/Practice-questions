@@ -4,7 +4,7 @@ class MyHashSet:
         self.dictionary = {}
 
     def add(self, key: int) -> None:
-        self.dictionary[key] = 1
+        self.dictionary[key] = None
 
     def remove(self, key: int) -> None:
         if key in self.dictionary:
