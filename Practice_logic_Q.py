@@ -1912,3 +1912,4 @@ for i in range(n):
     for str in range(i,n):
         print("*", end = " ")
     print()
+    
